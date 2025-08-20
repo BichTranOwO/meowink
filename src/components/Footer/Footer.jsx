@@ -1,5 +1,5 @@
 import React from "react";
-import "./footer.css";
+import "./Footer.css";
 import logo from "../../assets/images/logo_meowink.png";
 import { Link } from "react-router-dom";
 import { FaHeart,FaFacebookF, FaEnvelope, FaDiscord, FaPhone } from "react-icons/fa"; // lum icon
