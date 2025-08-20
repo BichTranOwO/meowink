@@ -183,7 +183,7 @@ export default function Register() {
           <a href="#" className="google-btn">
             <img
               src="https://www.svgrepo.com/show/475656/google-color.svg"
-              nClick={handleGoogleLogin}
+              onClick={handleGoogleLogin}
               alt="Google logo"
             />
             Đăng ký với Google{" "}
