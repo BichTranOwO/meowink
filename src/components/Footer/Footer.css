@@ -1,0 +1,125 @@
+:root {
+    --mau-nen-chinh: #fcd5ce;
+    --mau-chu-chinh: #f582ae;
+    --mau-chu-phu: #222222;
+    --mau-link-hover:#ff6b81;
+}
+
+.footer {
+    background: linear-gradient(90deg, #fcd5ce, #fae1dd);
+    padding: 6px;
+    font-family: "Lora", sans-serif;
+    color: var(--mau-chu-chinh);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 10;
+    margin-top: 2%;
+}
+
+.footer__top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 30px;
+
+}
+
+.footer__brand {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2px;
+    max-width: 500px;
+}
+
+.footer__logo {
+    width: 60px;
+    height: auto;
+    border-radius: 12px;
+}
+
+.footer__desc {
+    font-size: 0.95rem;
+    /* mau chu mo ta */
+    color: #7b435b;
+    line-height: 1.5;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.footer__contact {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 5px;
+}
+
+.footer__contact a {
+  background: rgba(255, 255, 255, 0.3);
+  color: #001858; /* Xanh navy cho dễ đọc trên nền pastel */
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.contact__icon--fb { background-color: #1877f2; }
+.contact__icon--fb:hover { background-color: #145dbf; color: #fff;}
+.contact__icon--mail { background-color: #ea4335; }
+.contact__icon--mail:hover { background-color: #EA4335  ; color: #fff;}
+.contact__icon--discord { background-color: #5865f2; }
+.contact__icon--discord:hover { background-color: #4752c4; color: #fff;}
+.contact__icon--zalo { background-color: #0180c7; }
+.contact__icon--zalo:hover { background-color: #005ADF; color: #fff;}
+
+.footer__links-title {
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+    color: var(--mau-chu-chinh);
+    margin: 10px 30px;
+
+}
+
+.footer__links-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.footer__links-item {
+    margin: 4px 0;
+    text-align: center;
+    font-size: 0.9rem;
+
+}
+
+.footer__links-item a {
+    text-decoration: none;
+    color: var(--mau-chu-phu);
+    transition: color 0.5s;
+}
+
+.footer__links-item a:hover {
+    color: var(--mau-link-hover);
+}
+
+.footer__bottom {
+    margin-top: 16px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #7b435b;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 10px;
+}
+
+.footer__copy {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+

@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+  --mau-chu: #001858;
+  --mau-nen: #F3D2C1;
+  --mau-nen-phu: #fef6e4;
+  --font-chinh: "Lora", sans-serif;
+  --mau-header: rgba(243, 210, 193, 0.2);
+  --mau-btn: #EFC2AC;
+  --mau-btn-hover: #F79ABD;
+  --mau-bang: #ffe2e9;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes border-move {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+@keyframes strike {
+  0% { color: inherit; }
+  50% { color: #888; }
+  100% { color: #888; text-decoration: line-through; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Main Todo Container */
+.todo {
+  position: relative;
+  font-family: var(--font-chinh);
+  width: 90%;
+  max-width: 800px;
+  margin: 2rem auto;
+  margin-top: 100px;
+  padding: 2.5rem;
+  border-radius: 10px;
+  background-color: var(--mau-nen);
+  box-shadow: 20px 20px 60px #f3d2c1, -20px -20px 60px #ffffff;
+  overflow: hidden;
+  animation: fadeIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  opacity: 0;
+}
+
+.todo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  padding: 3px;
+  background: linear-gradient(90deg, var(--mau-btn), transparent, var(--mau-btn));
+  background-size: 300% 300%;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  animation: border-move 5s linear infinite;
+  pointer-events: none;
+}
+
+/* Tabs Section */
+.todo-board__tabs {
+  display: flex;
+  gap: 8px;
+  animation: slideIn 0.6s 0.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.todo-board__tab {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  background: var(--mau-nen-phu);
+  color: var(--mau-chu);
+  font-weight: 700;
+  text-align: center;
+  border-radius: 30px 30px;
+  font-size: 1rem;
+  font-family: var(--font-chinh);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.todo-board__tab:hover {
+  background: var(--mau-btn-hover);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.todo-board__tab--active {
+  background: var(--mau-bang);
+  border-radius: 30px 30px 0 0;
+  color: var(--mau-chu);
+  font-weight: 700;
+  transform: translateY(0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Panel Section */
+.todo-board__panel {
+  padding: 16px;
+  border-radius: 0 0 10px 10px;
+  background: var(--mau-bang);
+  animation: fadeIn 0.6s 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.todo-board__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* Input Section */
+.todo-board__input {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.todo-board__input.active {
+  max-height: 60px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.todo-board__input input {
+  flex: 1;
+  padding: 10px 15px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: var(--font-chinh);
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.todo-board__input input:focus {
+  border-color: var(--mau-btn);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(239, 194, 172, 0.3);
+  background: white;
+}
+
+/* Buttons */
+.todo-board__btn-add, .todo__btn-add {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--mau-btn);
+  color: var(--mau-chu);
+  cursor: pointer;
+  font-family: var(--font-chinh);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.todo-board__btn-add:hover, .todo__btn-add:hover {
+  background-color: var(--mau-btn-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.todo-board__btn-add:active, .todo__btn-add:active {
+  transform: translateY(0);
+}
+
+.todo-board__btn--danger {
+  display: flex;
+  margin-right: 20px;
+  background: #dc3545;
+  gap:4px;
+  color: white;
+}
+
+/* Todo List */
+.todo-board__list {
+  margin-top: 16px;
+  padding: 0;
+  list-style: none;
+}
+
+.todo-board__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  animation: fadeIn 0.4s ease-out;
+  transition: all 0.3s ease;
+}
+
+.todo-board__item:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: translateX(5px);
+}
+
+.todo-board__item--done .todo-board__item-text {
+  animation: strike 0.4s ease forwards;
+}
+
+.todo-board__actions {
+  display: flex;
+  gap: 8px;
+}
+
+.todo-board__actions button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.todo-board__actions button:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .todo {
+    width: 95%;
+    padding: 1.5rem;
+  }
+  
+  .todo-board__tabs {
+    flex-direction: column;
+  }
+  
+  .todo-board__tab {
+    border-radius: 8px;
+    margin-bottom: 5px;
+  }
+  
+  .todo-board__tab--active {
+    border-radius: 8px;
+  }
+  
+  .todo-board__panel {
+    padding: 12px;
+  }
+  
+  .todo-board__input {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .todo-board__input.active {
+    max-height: 120px;
+  }
+  
+  .todo-board__btn-add, .todo__btn-add {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .todo {
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+  
+  .todo-board__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .todo-board__list{
+      display: flex;
+      flex-direction: column;
+  }
+  .todo-board__item-left{
+    display: flex;
+    gap:3px;
+  }
+  .todo-board__item {
+      display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 15px 0;
+  }
+  
+  .todo-board__actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}

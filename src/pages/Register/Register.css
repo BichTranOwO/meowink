@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+    --mau-chu: #001858;
+    --mau-nen: #F3D2C1;
+    --mau-nen-phu: #fef6e4;
+    --font-chinh: "Lora", sans-serif;
+    --mau-header: rgba(243, 210, 193, 0.2);
+    --mau-btn: #EFC2AC;
+    --mau-btn-hover: #F79ABD;
+    --mau-bang: #ffe2e9;
+    --mau-vien-duoi: #E99F4C;
+    --mau-border: #264143;
+    --mau-btn-register: #DE5499;
+
+}
+
+
+.register {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../../assets/images/b-meo-mo.png") center/cover no-repeat;
+}
+
+
+
+.register__cat-image {
+    margin-bottom: 20px;
+}
+
+.register__cat-img {
+    width: 130px;
+    height: auto;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.register__cat-img--fade-out {
+    opacity: 0;
+}
+
+.register__title {
+    color: var(--mau-chu);
+    font-weight: 900;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.register__form {
+
+    background-color: var(--mau-nen-phu);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    border-radius: 20px;
+    box-shadow: 3px 3px 0px 0px var(--mau-vien-duoi);
+
+}
+
+.register__group {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    margin: 10px 0;
+}
+
+.register__label {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.register__input {
+    outline: none;
+    border: 2px solid var(--mau-border);
+    box-shadow: 3px 4px 0px 1px var(--mau-vien-duoi);
+    width: 290px;
+    padding: 12px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    transition: transform 0.1s, box-shadow 0.1s;
+    margin-top: auto;
+    font-family: var(--font-chinh);
+
+}
+
+.register__input:focus {
+    transform: translateY(4px);
+    box-shadow: 1px 2px 0px 0px var(--mau-vien-duoi);
+}
+
+.register__input--check {
+    display: flex;
+    margin-top: 10px;
+}
+
+.register__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.register__btn {
+    padding: 10px 15px;
+    margin: 0.8rem 0;
+    width: 200px;
+    font-size: 15px;
+    background-color: var(--mau-btn-register);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-weight: 800;
+    box-shadow: 3px 3px 0px 0px var(--mau-vien-duoi);
+    cursor: pointer;
+    transition: opacity 0.2s;
+    font-family: var(--font-chinh);
+}
+
+.register__btn:hover,
+.register__btn:focus {
+    opacity: 0.9;
+}
+
+.register__text {
+    font-size: 0.9em;
+    margin: 0;
+}
+
+.login__link {
+    font-weight: 800;
+    color: var(--mau-chu);
+    padding: 5px;
+    /* text-decoration: none; */
+}
+
+.google-btn {
+    width: 200px;
+    display: inline-flex;
+    align-items: center;
+    background-color: white;
+    color: var(--mau-chu);
+    border-radius: 4px;
+    padding: 10px 15px;
+    margin-bottom: 0.8rem;
+    font-size: 15px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    box-shadow: 3px 3px 0px 0px var(--mau-vien-duoi);
+}
+
+.google-btn:hover {
+    background-color: #f7f7f7;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.5s, box-shadow 0.2s;
+
+}
+
+.google-btn:focus {
+    transform: translateY(4px);
+    box-shadow: 1px 2px 0px 0px var(--mau-vien-duoi);
+}
+
+.google-btn img {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+}
