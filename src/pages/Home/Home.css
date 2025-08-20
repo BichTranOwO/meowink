@@ -204,11 +204,12 @@
 .home__card-container {
   display: flex;
   justify-content: space-between;
-  /* Căn giữa toàn bộ dãy card */
   flex-wrap: wrap;
-  /* Để card tự xuống hàng trên màn hình nhỏ */
-  max-width: 1400px;
-  margin: 30px 42px;
+  /* max-width: 1200px; */
+  
+  margin: 42px 42px;
+  align-items: center;
+  /* justify-items: center; */
 }
 
 .home__card {

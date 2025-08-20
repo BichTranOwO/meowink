@@ -287,6 +287,7 @@ li {
   display: flex;
   gap: 10px;
   margin-right: 42px;
+  justify-content: space-between;
 }
 
 .header-button--login,
