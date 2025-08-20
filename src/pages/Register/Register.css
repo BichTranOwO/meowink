@@ -56,7 +56,7 @@
 .register__form {
 
     background-color: var(--mau-nen-phu);
-    padding: 1rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
