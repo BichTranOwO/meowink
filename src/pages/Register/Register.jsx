@@ -5,7 +5,10 @@ import catClose from "../../assets/images/meo-che-mat-tach-nen.png";
 import { Link, useNavigate } from "react-router-dom"; // 👈 dùng để chuyển trang
 import { auth } from "../../firebase/config"; // 👈 import từ config.js
 import { createUserWithEmailAndPassword } from "firebase/auth";
-
+import {
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
 export default function Register() {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -96,6 +99,17 @@ export default function Register() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+  const googleProvider = new GoogleAuthProvider();
+  
+    const handleGoogleLogin = async () => {
+      try {
+        await signInWithPopup(auth, googleProvider);
+        alert("Đăng nhập Google thành công 🚀");
+        navigate("/home");
+      } catch (error) {
+        alert("Google login fail: " + error.message);
+      }
+    };
   return (
     <div className="register">
       <form className="register__form" onSubmit={handleSubmit}>
@@ -169,6 +183,7 @@ export default function Register() {
           <a href="#" className="google-btn">
             <img
               src="https://www.svgrepo.com/show/475656/google-color.svg"
+              nClick={handleGoogleLogin}
               alt="Google logo"
             />
             Đăng ký với Google{" "}
