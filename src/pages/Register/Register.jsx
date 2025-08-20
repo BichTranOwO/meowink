@@ -180,10 +180,10 @@ export default function Register() {
           <button type="submit" className="register__btn">
             {loading ? "Đang xử lý..." : "ĐĂNG KÝ"}
           </button>
-          <a href="#" className="google-btn">
+              
+          <a className="google-btn" onClick={handleGoogleLogin}  >
             <img
               src="https://www.svgrepo.com/show/475656/google-color.svg"
-              onClick={handleGoogleLogin}
               alt="Google logo"
             />
             Đăng ký với Google{" "}
